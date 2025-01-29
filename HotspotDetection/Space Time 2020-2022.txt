@@ -1,0 +1,171 @@
+                                 _____________________________
+
+                                        SaTScan v10.2.5
+                                 _____________________________
+
+
+Program run on: Tue Oct  8 21:17:51 2024
+
+Retrospective Space-Time analysis
+scanning for clusters with high rates
+using the Space-Time Permutation model.
+_______________________________________________________________________________________________
+
+SUMMARY OF DATA
+
+Study period.......................: 2020/1/1 to 2022/12/31
+Number of locations................: 13
+Total number of cases..............: 17492
+_______________________________________________________________________________________________
+
+CLUSTERS DETECTED
+
+1.Location IDs included.: Kota Banjarmasin
+  Coordinates / radius..: (3.316694 N, 114.590111 E) / 0 km
+  Span..................: 0 km
+  Time frame............: 2020/1/1 to 2020/12/31
+  Number of cases.......: 4025
+  Expected cases........: 2558.73
+  Observed / expected...: 1.57
+  Test statistic........: 431.577477
+  P-value...............: < 0.00000000000000001
+
+2.Location IDs included.: Tabalong, Balangan, Hulu Sungai Utara, Hulu Sungai Tengah, Hulu
+                          Sungai Selatan, Tapin, Kotabaru, Barito Kuala
+  Coordinates / radius..: (1.864300 N, 115.568100 E) / 167.36 km
+  Span..................: 167.36 km
+  Time frame............: 2021/1/1 to 2021/12/31
+  Number of cases.......: 2245
+  Expected cases........: 1566.82
+  Observed / expected...: 1.43
+  Test statistic........: 143.901099
+  P-value...............: < 0.00000000000000001
+
+3.Location IDs included.: Tanah Laut, Kota Banjarbaru, Banjar
+  Coordinates / radius..: (3.769400 N, 114.809300 E) / 54.20 km
+  Span..................: 54.20 km
+  Time frame............: 2022/1/1 to 2022/12/31
+  Number of cases.......: 1690
+  Expected cases........: 1320.47
+  Observed / expected...: 1.28
+  Test statistic........: 51.715043
+  P-value...............: < 0.00000000000000001
+_______________________________________________________________________________________________
+
+PARAMETER SETTINGS
+
+Input
+-----
+  Case File        : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Cases.cas
+  Time Precision   : Year
+  Start Time       : 2020/1/1
+  End Time         : 2022/12/31
+  Coordinates File : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Coordinates.geo
+  Coordinates      : Latitude/Longitude
+
+Analysis
+--------
+  Type of Analysis        : Retrospective Space-Time
+  Probability Model       : Space-Time Permutation
+  Scan for Areas with     : High Rates
+  Time Aggregation Units  : Year
+  Time Aggregation Length : 1
+
+Output
+------
+  Main Results File       : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.txt
+  Cluster File            : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.col.txt
+  Google Earth File       : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.kml
+  Google Maps File        : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.clustermap.html
+  Shapefile (Cluster)     : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.col.shp
+  Cartesian Graph File    : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.cluster.html
+  Cluster File            : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.col.dbf
+  Stratified Cluster File : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.sci.txt
+  Stratified Cluster File : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.sci.dbf
+  Location File           : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.gis.txt
+  Location File           : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.gis.dbf
+  Shapefile (Locations)   : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.gis.shp
+  Simulated LLRs File     : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.llr.txt
+  Simulated LLRs File     : E:\Selvi\SEMESTER 7\3. TK 1 - Spasial\0. TUGAS\Tugas 2\0. Raw Data\Space Time\Output Space Time TBC.llr.dbf
+
+Data Checking
+-------------
+  Temporal Data Check     : Check to ensure that all cases and controls are within the specified temporal study period.
+  Geographical Data Check : Check to ensure that all observations (cases, controls and populations) are within the specified geographical area.
+
+Spatial Neighbors
+-----------------
+  Use Non-Euclidean Neighbors file     : No
+  Use Meta Locations File              : No
+  Observations with Multiple Locations : One location per observation.
+
+Locations Network
+-----------------
+  Use Locations Network File : No
+
+Spatial Window
+--------------
+  Maximum Spatial Cluster Size : 50 percent of population at risk
+  Window Shape                 : Circular
+
+Temporal Window
+---------------
+  Minimum Temporal Cluster Size : 1 Year
+  Maximum Temporal Cluster Size : 50 percent of study period
+
+Cluster Restrictions
+--------------------
+  Minimum Cases in Cluster for High Rates : 2
+  Restrict High Rate Clusters             : No
+
+Space And Time Adjustments
+--------------------------
+  Adjust for Weekly Trends, Nonparametric : No
+
+Inference
+---------
+  P-Value Reporting                  : Default Combination
+  Number of Replications             : 999
+  Adjusting for More Likely Clusters : No
+
+Cluster Drilldown
+-----------------
+  Standard Drilldown on Detected Clusters  : No
+  Bernoulli Drilldown on Detected Clusters : No
+
+Spatial Output
+--------------
+  Automatically Launch Map                  : Yes
+  Compress KML File into KMZ File           : No
+  Include All Location IDs in the Clusters  : Yes
+  Cluster Location Threshold - Separate KML : 1000
+  Report Hierarchical Clusters              : Yes
+  Criteria for Reporting Secondary Clusters : No Geographical Overlap
+  Restrict Reporting to Smaller Clusters    : No
+
+Temporal Graphs
+---------------
+  Produce Temporal Graphs : No
+
+Other Output
+------------
+  Report Critical Values     : No
+  Report Monte Carlo Rank    : No
+  Print ASCII Column Headers : No
+  User Defined Title         : 
+
+Notifications
+-------------
+  Always Send Email                      : No
+  Send Email With Results Meeting Cutoff : No
+
+Run Options
+-----------
+  Processor Usage   : All Available Processors
+  Suppress Warnings : No
+  Logging Analysis  : No
+_______________________________________________________________________________________________
+
+Program completed  : Tue Oct  8 21:17:52 2024
+Total Running Time : 1 second
+Processor Usage    : 12 processors

@@ -1,0 +1,135 @@
+                                 _____________________________
+
+                                        SaTScan v10.2.5
+                                 _____________________________
+
+
+Program run on: Tue Oct  8 17:11:22 2024
+
+Purely Spatial analysis
+scanning for clusters with high rates
+using the Discrete Poisson model.
+_______________________________________________________________________________________________
+
+SUMMARY OF DATA
+
+Study period.......................: 2000/1/1 to 2000/12/31
+Number of locations................: 13
+Population, averaged over time.....: 4087894
+Total number of cases..............: 6616
+Annual cases / 100000..............: 161.5
+_______________________________________________________________________________________________
+
+CLUSTERS DETECTED
+
+1.Location IDs included.: Kota Banjarmasin
+  Overlap with clusters.: No Overlap
+  Coordinates / radius..: (3.316694 N, 114.590111 E) / 0 km
+  Span..................: 0 km
+  Gini Cluster..........: Yes
+  Population............: 671690
+  Number of cases.......: 4025
+  Expected cases........: 1087.09
+  Annual cases / 100000.: 598.0
+  Observed / expected...: 3.70
+  Relative risk.........: 7.90
+  Log likelihood ratio..: 3304.973474
+  P-value...............: < 0.00000000000000001
+_______________________________________________________________________________________________
+
+PARAMETER SETTINGS
+
+Input
+-----
+  Case File        : /Users/hyldasilalahi/Cases.cas
+  Population File  : /Users/hyldasilalahi/Population.pop
+  Time Precision   : None
+  Start Time       : 2000/1/1
+  End Time         : 2000/12/31
+  Coordinates File : /Users/hyldasilalahi/Coordinates.geo
+  Coordinates      : Latitude/Longitude
+
+Analysis
+--------
+  Type of Analysis    : Purely Spatial
+  Probability Model   : Discrete Poisson
+  Scan for Areas with : High Rates
+
+Output
+------
+  Main Results File : /Users/Golda/College/sem 5/spasial/Tugas 2/Purely Spatial 2020.txt
+
+Data Checking
+-------------
+  Temporal Data Check     : Check to ensure that all cases and controls are within the specified temporal study period.
+  Geographical Data Check : Check to ensure that all observations (cases, controls and populations) are within the specified geographical area.
+
+Spatial Neighbors
+-----------------
+  Use Non-Euclidean Neighbors file     : No
+  Use Meta Locations File              : No
+  Observations with Multiple Locations : One location per observation.
+
+Locations Network
+-----------------
+  Use Locations Network File : No
+
+Spatial Window
+--------------
+  Maximum Spatial Cluster Size : 50 percent of population at risk
+  Window Shape                 : Circular
+  Isotonic Scan                : No
+
+Cluster Restrictions
+--------------------
+  Minimum Cases in Cluster for High Rates : 2
+  Restrict High Rate Clusters             : No
+
+Space And Time Adjustments
+--------------------------
+  Adjust for known relative risks : No
+
+Inference
+---------
+  P-Value Reporting                  : Default Combination
+  Number of Replications             : 999
+  Adjusting for More Likely Clusters : No
+
+Cluster Drilldown
+-----------------
+  Standard Drilldown on Detected Clusters : No
+
+Miscellaneous Analysis
+----------------------
+  Report Oliveira's F : No
+
+Spatial Output
+--------------
+  Report Hierarchical Clusters              : Yes
+  Criteria for Reporting Secondary Clusters : No Geographical Overlap
+  Report Gini Optimized Cluster Collection  : Yes
+  Gini Index Based Collection Reporting     : Optimal Only
+  Report Gini Index Cluster Coefficents     : No
+  Restrict Reporting to Smaller Clusters    : No
+
+Other Output
+------------
+  Report Critical Values  : No
+  Report Monte Carlo Rank : No
+  User Defined Title      : 
+
+Notifications
+-------------
+  Always Send Email                      : No
+  Send Email With Results Meeting Cutoff : No
+
+Run Options
+-----------
+  Processor Usage   : All Available Processors
+  Suppress Warnings : No
+  Logging Analysis  : No
+_______________________________________________________________________________________________
+
+Program completed  : Tue Oct  8 17:11:23 2024
+Total Running Time : 1 second
+Processor Usage    : 8 processors

@@ -1,0 +1,163 @@
+                                 _____________________________
+
+                                        SaTScan v10.2.5
+                                 _____________________________
+
+
+Program run on: Tue Oct  8 17:15:08 2024
+
+Purely Spatial analysis
+scanning for clusters with high rates
+using the Discrete Poisson model.
+_______________________________________________________________________________________________
+
+SUMMARY OF DATA
+
+Study period.......................: 2000/1/1 to 2000/12/31
+Number of locations................: 13
+Population, averaged over time.....: 4178229
+Total number of cases..............: 6736
+Annual cases / 100000..............: 160.9
+_______________________________________________________________________________________________
+
+CLUSTERS DETECTED
+
+1.Location IDs included.: Kota Banjarmasin
+  Overlap with clusters.: No Overlap
+  Coordinates / radius..: (3.316694 N, 114.590111 E) / 0 km
+  Span..................: 0 km
+  Gini Cluster..........: Yes
+  Population............: 673514
+  Number of cases.......: 1800
+  Expected cases........: 1085.82
+  Annual cases / 100000.: 266.7
+  Observed / expected...: 1.66
+  Relative risk.........: 1.90
+  Log likelihood ratio..: 242.802724
+  P-value...............: < 0.00000000000000001
+
+2.Location IDs included.: Balangan, Hulu Sungai Tengah
+  Overlap with clusters.: No Overlap
+  Coordinates / radius..: (2.326000 N, 115.615500 E) / 39.12 km
+  Span..................: 39.12 km
+  Gini Cluster..........: Yes
+  Population............: 398798
+  Number of cases.......: 991
+  Expected cases........: 642.93
+  Annual cases / 100000.: 248.0
+  Observed / expected...: 1.54
+  Relative risk.........: 1.63
+  Log likelihood ratio..: 90.852109
+  P-value...............: < 0.00000000000000001
+
+3.Location IDs included.: Kota Banjarbaru
+  Overlap with clusters.: No Overlap
+  Coordinates / radius..: (3.457242 N, 114.810318 E) / 0 km
+  Span..................: 0 km
+  Gini Cluster..........: No
+  Population............: 268292
+  Number of cases.......: 463
+  Expected cases........: 432.53
+  Annual cases / 100000.: 172.2
+  Observed / expected...: 1.07
+  Relative risk.........: 1.08
+  Log likelihood ratio..: 1.122558
+  P-value...............: 0.828
+_______________________________________________________________________________________________
+
+PARAMETER SETTINGS
+
+Input
+-----
+  Case File        : /Users/hyldasilalahi/Cases.cas
+  Population File  : /Users/hyldasilalahi/Population.pop
+  Time Precision   : None
+  Start Time       : 2000/1/1
+  End Time         : 2000/12/31
+  Coordinates File : /Users/hyldasilalahi/Coordinates.geo
+  Coordinates      : Latitude/Longitude
+
+Analysis
+--------
+  Type of Analysis    : Purely Spatial
+  Probability Model   : Discrete Poisson
+  Scan for Areas with : High Rates
+
+Output
+------
+  Main Results File : /Users/Golda/College/sem 5/spasial/Tugas 2/Purely Spatial 2022.txt
+
+Data Checking
+-------------
+  Temporal Data Check     : Check to ensure that all cases and controls are within the specified temporal study period.
+  Geographical Data Check : Check to ensure that all observations (cases, controls and populations) are within the specified geographical area.
+
+Spatial Neighbors
+-----------------
+  Use Non-Euclidean Neighbors file     : No
+  Use Meta Locations File              : No
+  Observations with Multiple Locations : One location per observation.
+
+Locations Network
+-----------------
+  Use Locations Network File : No
+
+Spatial Window
+--------------
+  Maximum Spatial Cluster Size : 50 percent of population at risk
+  Window Shape                 : Circular
+  Isotonic Scan                : No
+
+Cluster Restrictions
+--------------------
+  Minimum Cases in Cluster for High Rates : 2
+  Restrict High Rate Clusters             : No
+
+Space And Time Adjustments
+--------------------------
+  Adjust for known relative risks : No
+
+Inference
+---------
+  P-Value Reporting                  : Default Combination
+  Number of Replications             : 999
+  Adjusting for More Likely Clusters : No
+
+Cluster Drilldown
+-----------------
+  Standard Drilldown on Detected Clusters : No
+
+Miscellaneous Analysis
+----------------------
+  Report Oliveira's F : No
+
+Spatial Output
+--------------
+  Report Hierarchical Clusters              : Yes
+  Criteria for Reporting Secondary Clusters : No Geographical Overlap
+  Report Gini Optimized Cluster Collection  : Yes
+  Gini Index Based Collection Reporting     : Optimal Only
+  Report Gini Index Cluster Coefficents     : No
+  Restrict Reporting to Smaller Clusters    : No
+
+Other Output
+------------
+  Report Critical Values  : No
+  Report Monte Carlo Rank : No
+  User Defined Title      : 
+
+Notifications
+-------------
+  Always Send Email                      : No
+  Send Email With Results Meeting Cutoff : No
+
+Run Options
+-----------
+  Processor Usage   : All Available Processors
+  Suppress Warnings : No
+  Logging Analysis  : No
+_______________________________________________________________________________________________
+
+Program completed  : Tue Oct  8 17:15:09 2024
+Total Running Time : 1 second
+Processor Usage    : 8 processors
