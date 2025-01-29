@@ -8,7 +8,6 @@ library(car)
 library(lmtest)
 library(sf)
 library(GWmodel)
-library(maptools)
 library(RColorBrewer)
 library(writexl)
 library(sp)
@@ -34,7 +33,7 @@ text(x = data$longitude, y = data$latitude, labels = data$Kabupaten, pos = 4, co
 
 # Analisis Korelasi
 # Memilih data numerik
-data_numeric <- data %>% select(-Kabupaten)
+data_numeric <- dplyr::select(data, -Kabupaten)
 
 # Membuat matriks korelasi
 cor_matrix <- cor(data_numeric)
@@ -98,110 +97,31 @@ shapefile <- shapefile %>%
          y = st_coordinates(centroid)[, 2])
 
 # Visualisasi data
-# Peta densitas penduduk
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = DP), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  labs(title = "Peta Gradien Nilai Densitas Penduduk Per Wilayah") + 
-  theme_minimal()
+variables <- list(
+  list(name = "DP", title = "Densitas Penduduk", ylab = "Nilai DP"),
+  list(name = "LP", title = "Laju Pertumbuhan", ylab = "Nilai LP"),
+  list(name = "MM", title = "Migrasi Masuk", ylab = "Nilai MM"),
+  list(name = "MK", title = "Migrasi Keluar", ylab = "Nilai MK"),
+  list(name = "KB", title = "Keluarga Berencana", ylab = "Nilai KB"),
+  list(name = "UHH", title = "Umur Harapan Hidup", ylab = "Nilai UHH"),
+  list(name = "LS", title = "Lama Sekolah", ylab = "Nilai LS"),
+  list(name = "JBL", title = "Jumlah Bayi Lahir", ylab = "Nilai JBL")
+)
 
-# Boxplot densitas penduduk
-boxplot(data$DP, 
-        main = "Boxplot Densitas Penduduk", 
-        ylab = "Nilai DP", 
-        col = "lightblue")
-
-# Peta laju pertumbuhan
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = LP), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  labs(title = "Peta Gradien Nilai Laju Pertumbuhan Per Wilayah") + 
-  theme_minimal()
-
-# Boxplot laju pertumbuhan
-boxplot(data$LP, 
-        main = "Boxplot Laju Pertumbuhan", 
-        ylab = "Nilai LP", 
-        col = "lightblue")
-
-# Peta migrasi masuk
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = MM), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  labs(title = "Peta Gradien Nilai Migrasi Masuk Per Wilayah") + 
-  theme_minimal()
-
-# Boxplot migrasi masuk
-boxplot(data$MM, 
-        main = "Boxplot Migrasi Masuk", 
-        ylab = "Nilai MM", 
-        col = "lightblue")
-
-# Peta migrasi keluar
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = MK), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  labs(title = "Peta Gradien Nilai Migrasi Keluar Per Wilayah") + 
-  theme_minimal()
-
-# Boxplot migrasi keluar
-boxplot(data$MK, 
-        main = "Boxplot Migrasi Keluar", 
-        ylab = "Nilai MK", 
-        col = "lightblue")
-
-# Peta keluarga berencana
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = KB), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  labs(title = "Peta Gradien Nilai Persentase Keluarga Berencana Per Wilayah") + 
-  theme_minimal()
-
-# Boxplot keluarga berencana
-boxplot(data$KB, 
-        main = "Boxplot Persentase Keluarga Berencana", 
-        ylab = "Nilai KB", 
-        col = "lightblue")
-
-# Peta umur harapan hidup
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = UHH), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  labs(title = "Peta Gradien Nilai Umur Harapan Hidup Per Wilayah") + 
-  theme_minimal()
-
-# Boxplot umur harapan hidup
-boxplot(data$UHH, 
-        main = "Boxplot Umur Harapan Hidup", 
-        ylab = "Nilai UHH", 
-        col = "lightblue")
-
-# Peta lama sekolah
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = LS), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  labs(title = "Peta Gradien Nilai Rata-Rata Lama Sekolah Per Wilayah") + 
-  theme_minimal()
-
-# Boxplot lama sekolah
-boxplot(data$LS, 
-        main = "Boxplot Lama Sekolah", 
-        ylab = "Nilai LP", 
-        col = "lightblue")
-
-# Peta jumlah bayi lahir
-ggplot(data = shapefile) + 
-  geom_sf(aes(fill = JBL), color = "black", size = 0.2) + 
-  scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
-  geom_text(aes(x = x, y = y, label = Kabupaten), size = 2.5, color = "black") + 
-  labs(title = "Peta Gradien Nilai Jumlah Bayi Lahir Per Wilayah") + 
-  theme_minimal()
-
-# Boxplot jumlah bayi lahir
-boxplot(data$JBL, 
-        main = "Boxplot Jumlah Bayi Lahir", 
-        ylab = "Nilai LP", 
-        col = "lightblue")
+for (var in variables) {
+  ggplot(data = shapefile) + 
+    geom_sf(aes_string(fill = var$name), color = "black", size = 0.2) + 
+    scale_fill_gradient(low = "yellow", high = "dark green", name = "Gradient") + 
+    labs(title = paste("Peta Gradien Nilai", var$title, "Per Wilayah")) + 
+    theme_minimal()
+  
+  boxplot(
+    data[[var$name]],
+    main = paste("Boxplot", var$title),
+    ylab = var$ylab,
+    col = "lightblue"
+  )
+}
 
 # Estimasi Model Global (Metode OLS)
 ols <- lm(DP ~ LS + KB + MK + MM + LP, data)
@@ -366,13 +286,18 @@ gausstab <- cbind(
   pvalue_gauss
 )
 
-# Membuat kolom ID untuk menggabungkan data shapefile
+# Pastikan kolom ID untuk penggabungan
 gausstab$ID <- 1:nrow(gausstab)
 shapefile$ID <- 1:nrow(shapefile)
 
-# Menggabungkan data shapefile dengan data hasil GWR Gaussian
-merged_data_gauss <- merge(shapefile, gausstab, by = "ID", all.x = TRUE)
-merged_data_gauss <- merged_data_gauss %>% select(-ID)
+# Hapus kolom `Kabupaten` yang redundan
+gausstab <- gausstab %>% dplyr::select(-Kabupaten)
+
+# Gabungkan data dengan pengaturan nama kolom duplikat
+merged_data_gauss <- merge(shapefile, gausstab, by = "ID", all.x = TRUE, suffixes = c("_shapefile", "_gausstab"))
+
+# Hapus kolom ID dari hasil penggabungan jika tidak diperlukan
+merged_data_gauss <- merged_data_gauss %>% dplyr::select(-ID)
 
 # Menambahkan Kolom 'Kelompok' berdasarkan p-value
 merged_data_gauss$Kelompok <- ifelse(merged_data_gauss$LS_p < 0.05 & merged_data_gauss$MK_p < 0.05 & merged_data_gauss$MM_p < 0.05  & merged_data_gauss$LP_p < 0.05, 5, 
@@ -423,78 +348,46 @@ ggplot() +
 
 # Peta Persentase Densitas Penduduk (Variabel Y)
 ggplot() + 
-  geom_sf(data = merged_data_gauss, aes(fill = DP.x)) + 
+  geom_sf(data = merged_data_gauss, aes(fill = DP_gausstab)) + 
   scale_fill_gradient(low = "yellow", high = "darkred") + 
   labs(fill = "Persentase Densitas Penduduk") +
   ggtitle("Peta Persentase Densitas Penduduk") + 
   theme_minimal()
 
-# Peta Keragaman Spasial Beta 1 (LS_coef)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = LS_coef)) +  
-  scale_fill_gradient(low = "white", high = "purple", name = "Gradient") +  
-  ggtitle("Keragaman Spasial Beta (LS)") + 
-  theme_minimal()
+# Peta Keragaman Spasial
+coef_variables <- list(
+  list(name = "LS_coef", title = "Keragaman Spasial Beta (LS)"),
+  list(name = "KB_coef", title = "Keragaman Spasial Beta (KB)"),
+  list(name = "MK_coef", title = "Keragaman Spasial Beta (MK)"),
+  list(name = "MM_coef", title = "Keragaman Spasial Beta (MM)"),
+  list(name = "LP_coef", title = "Keragaman Spasial Beta (LP)")
+)
 
-# Peta Keragaman Spasial Beta 2 (KB_coef)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = KB_coef)) +  
-  scale_fill_gradient(low = "white", high = "purple", name = "Gradient") +  
-  ggtitle("Keragaman Spasial Beta (KB)") + 
-  theme_minimal()
+for (coef in coef_variables) {
+  print(
+    ggplot() +  
+      geom_sf(data = merged_data_gauss, aes_string(fill = coef$name)) +  
+      scale_fill_gradient(low = "white", high = "purple", name = "Gradient") +  
+      ggtitle(coef$title) + 
+      theme_minimal()
+  )
+}
 
-# Peta Keragaman Spasial Beta 3 (MK_coef)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = MK_coef)) +  
-  scale_fill_gradient(low = "white", high = "purple", name = "Gradient") +  
-  ggtitle("Keragaman Spasial Beta (MK)") + 
-  theme_minimal()
+# Peta p-value
+pvalue_variables <- list(
+  list(name = "LS_p", title = "Peta p-value Beta (LS)"),
+  list(name = "KB_p", title = "Peta p-value Beta (KB)"),
+  list(name = "MK_p", title = "Peta p-value Beta (MK)"),
+  list(name = "MM_p", title = "Peta p-value Beta (MM)"),
+  list(name = "LP_p", title = "Peta p-value Beta (LP)")
+)
 
-# Peta Keragaman Spasial Beta 4 (MM_coef)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = MM_coef)) +  
-  scale_fill_gradient(low = "white", high = "purple", name = "Gradient") +  
-  ggtitle("Keragaman Spasial Beta (MM)") + 
-  theme_minimal()
-
-# Peta Keragaman Spasial Beta 5 (LP_coef)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = LP_coef)) +  
-  scale_fill_gradient(low = "white", high = "purple", name = "Gradient") +  
-  ggtitle("Keragaman Spasial Beta (LP)") + 
-  theme_minimal()
-
-# Peta P-Value untuk Beta 1 (LS_p)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = LS_p)) +  
-  scale_fill_gradient2(low = "white", high = "orange", midpoint = 0.05, name = "P-Value") +  
-  ggtitle("Peta P-value Beta (LS)") + 
-  theme_minimal()
-
-# Peta P-Value untuk Beta 2 (KB_p)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = KB_p)) +  
-  scale_fill_gradient2(low = "white", high = "orange", midpoint = 0.05, name = "P-Value") +  
-  ggtitle("Peta P-value Beta (KB)") + 
-  theme_minimal()
-
-# Peta P-Value untuk Beta 3 (MK_p)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = MK_p)) +  
-  scale_fill_gradient2(low = "white", high = "orange", midpoint = 0.05, name = "P-Value") +  
-  ggtitle("Peta P-value Beta (MK)") + 
-  theme_minimal()
-
-# Peta P-Value untuk Beta 4 (MM_p)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = MM_p)) +  
-  scale_fill_gradient2(low = "white", high = "orange", midpoint = 0.05, name = "P-Value") +  
-  ggtitle("Peta P-value Beta (MM)") + 
-  theme_minimal()
-
-# Peta P-Value untuk Beta 5 (LP_p)
-ggplot() +  
-  geom_sf(data = merged_data_gauss, aes(fill = LP_p)) +  
-  scale_fill_gradient2(low = "white", high = "orange", midpoint = 0.05, name = "P-Value") +  
-  ggtitle("Peta P-value Beta (LP)") + 
-  theme_minimal()
+for (pval in pvalue_variables) {
+  print(
+    ggplot() +  
+      geom_sf(data = merged_data_gauss, aes_string(fill = pval$name)) +  
+      scale_fill_gradient2(low = "white", high = "orange", midpoint = 0.05, name = "P-Value") +  
+      ggtitle(pval$title) + 
+      theme_minimal()
+  )
+}
